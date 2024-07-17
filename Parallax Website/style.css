@@ -1,0 +1,94 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 0;
+    display: block;
+}
+section {
+    height: 90vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.parallax {
+    background-size: auto/length/cover/contain;
+    background-attachment: scroll/fixed/local;
+    background-repeat: repeat/repeat-x/repeat-y/no-repeat;
+    background-position: value;
+}
+#section1 {
+    background-image: url('images/k4.jpg');
+    background-size: 55%;
+    background-position: center;
+}
+#section2 {
+    background-image: url('images/l1.jpg');
+    background-size: 55%;
+    background-position: center;
+}
+#section3 {
+    background-image: url('images/ke1.jpg');
+    background-size: 60%;
+    background-position: center;
+}
+.content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+}
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+div {
+    width: 200%;
+    height: 20%;
+    background-color: lightblue;
+    animation-name: example;
+    animation-duration: 3s;
+  }
+  @keyframes example {
+    from {background-color: lightblue;}
+    to {background-color: rgb(108, 108, 184);}
+  }
+.content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+section.visible .content {
+    opacity: 1;
+    transform: translateY(0);
+}

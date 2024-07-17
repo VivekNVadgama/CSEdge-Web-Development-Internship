@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Maker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Maker</h1>
+        <div class="form-preview-container">
+            <form id="resume-form" class="form-section">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="contact">Contact Info:</label>
+                    <input type="text" id="contact" name="contact" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Summary</legend>
+                    <textarea id="summary" name="summary" required></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>Skills</legend>
+                    <div id="skills-container">
+                        <input type="text" class="skill-input" name="skills[]" required>
+                    </div>
+                    <button type="button" id="add-skill-button">Add Skill</button>
+                </fieldset>
+                <fieldset>
+                    <legend>Education</legend>
+                    <div id="education-container">
+                        <textarea name="education[]" required></textarea>
+                    </div>
+                    <button type="button" id="add-education-button">Add Education</button>
+                </fieldset>
+                <fieldset>
+                    <legend>Experience</legend>
+                    <div id="experience-container">
+                        <textarea name="experience[]" required></textarea>
+                    </div>
+                    <button type="button" id="add-experience-button">Add Experience</button>
+                </fieldset>
+                <fieldset>
+                    <legend>Projects</legend>
+                    <div id="projects-container">
+                        <textarea name="projects[]" required></textarea>
+                    </div>
+                    <button type="button" id="add-project-button">Add Project</button>
+                </fieldset>
+                <fieldset>
+                    <legend>Certifications</legend>
+                    <div id="certifications-container">
+                        <textarea name="certifications[]" required></textarea>
+                    </div>
+                    <button type="button" id="add-certification-button">Add Certification</button>
+                </fieldset>
+                <fieldset>
+                    <legend>Languages</legend>
+                    <div id="languages-container">
+                        <textarea name="languages[]" required></textarea>
+                    </div>
+                    <button type="button" id="add-language-button">Add Language</button>
+                </fieldset>
+                <fieldset>
+                    <legend>References</legend>
+                    <div id="references-container">
+                        <textarea name="references[]" required></textarea>
+                    </div>
+                    <button type="button" id="add-reference-button">Add Reference</button>
+                </fieldset>
+                <fieldset>
+                    <legend>Resume Design</legend>
+                    <select id="design" name="design">
+                        <option value="modern">Modern</option>
+                        <option value="classic">Classic</option>
+                    </select>
+                </fieldset>
+                <div class="action-buttons">
+                    <button type="button" class="action-button" onclick="generatePreview()">Generate Preview</button>
+                    <button type="button" class="action-button" onclick="downloadResume('pdf')">Download PDF</button>
+                    <button type="button" class="action-button" onclick="downloadResume('docx')">Download Docx</button>
+                    <button type="button" class="action-button" onclick="downloadResume('txt')">Download Txt</button>
+                </div>
+            </form>
+            <div id="resume-preview" class="resume-preview"></div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
